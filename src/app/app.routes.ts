@@ -1,10 +1,11 @@
 import { Routes } from '@angular/router';
 import { ObtenertodosComponent } from './obtenertodos/obtenertodos.component';
-import { MetodopostComponent } from './metodopost/metodopost.component';
-import { MetododeleteComponent } from './metododelete/metododelete.component';
+import { OperacionesComponent } from './obtenertodos/operaciones/operaciones.component';
+
 
 export const routes: Routes = [
-    { path: 'obtenertodos', component: ObtenertodosComponent },
-    { path: 'anadir', component: MetodopostComponent },
-    { path: 'borrar', component: MetododeleteComponent },
+    { path: '', component: ObtenertodosComponent ,children: [
+    { path: 'edicion/:id', component: OperacionesComponent },
+    { path: 'edicion', component: OperacionesComponent }]},
+   
 ];

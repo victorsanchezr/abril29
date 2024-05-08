@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form [formGroup]="form" #frmProducto="ngForm" (ngSubmit)="operar()" class="card">
+          <div class="card-body">
+            @if(edicion){
+            <div class="form-group">
+              <label for="product_id">ID Producto</label>
+              <input id="product_id" placeholder="ID Producto" [readonly]="true" formControlName="product_id" class="form-control">
+            </div>
+        }
+            <div class="form-group">
+              <label for="product_name">Nombre</label>
+              <input id="product_name" placeholder="Nombre" required formControlName="product_name" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="supplier_id">ID Proveedor</label>
+              <input id="supplier_id" placeholder="ID Proveedor" required formControlName="supplier_id" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="category_id">ID Categoría</label>
+              <input id="category_id" placeholder="ID Categoría" required formControlName="category_id" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="quantity_per_unit">Cantidad por Unidad</label>
+              <input id="quantity_per_unit" placeholder="Cantidad por Unidad" required formControlName="quantity_per_unit" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="unit_price">Precio Unitario</label>
+              <input id="unit_price" placeholder="Precio Unitario" required formControlName="unit_price" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="units_in_stock">Unidades en Stock</label>
+              <input id="units_in_stock" placeholder="Unidades en Stock" required formControlName="units_in_stock" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="units_on_order">Unidades en Pedido</label>
+              <input id="units_on_order" placeholder="Unidades en Pedido" required formControlName="units_on_order" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="reorder_level">Nivel de Reorden</label>
+              <input id="reorder_level" placeholder="Nivel de Reorden" required formControlName="reorder_level" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="discount">Descuento</label>
+              <input id="discount" placeholder="Descuento" required formControlName="discount" class="form-control">
+            </div>
+            <button type="submit" [disabled]="frmProducto.invalid" class="btn btn-primary">Aceptar</button>
+            <button type="button" routerLink="" class="btn btn-secondary">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
